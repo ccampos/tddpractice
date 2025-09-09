@@ -1,21 +1,9 @@
-const { fizzBuzz } = require('./main');
+const { unique } = require('./main');
 
-test('returns 1 since not divisible by 3 or 5', () => {
-  expect(fizzBuzz(1)).toBe('1');
+test('removes duplicates from array', () => {
+  expect(unique([1, 6, 4, 6, 8])).toEqual([1, 6, 4, 8]);
 })
 
-test('returns Fizz since is only divisible by 3', () => {
-  expect(fizzBuzz(9)).toBe('Fizz');
-})
-
-test('returns Buzz since it\'s only divisible by 5', () => {
-  expect(fizzBuzz(25)).toBe('Buzz');
-})
-
-test('returns FizzBuzz since it\'s divisible by 3 and 5', () => {
-  expect(fizzBuzz(30)).toBe('FizzBuzz');
-})
-
-test('returns Fizz for negative divisible by 3', () => {
-  expect(fizzBuzz(-12)).toBe('Fizz');
+test('removes duplicates from array', () => {
+  expect(unique([3, 5, 3, 9, 1, 9, 4])).toEqual([3, 5, 9, 1, 4]);
 })

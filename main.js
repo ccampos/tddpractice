@@ -1,20 +1,20 @@
-function fizzBuzz(n) {
-  if (n % 3 === 0 && n % 5 === 0) {
-    return "FizzBuzz";
-  } else if (n % 5 === 0) {
-    return "Buzz";
-  } else if (n % 3 === 0) {
-    return "Fizz";
-  } else {
-    return n.toString();
+function unique(arr) {
+  const seen = new Set();
+  const result = [];
+  for (const item of arr) {
+    if (!seen.has(item)) {
+      seen.add(item);
+      result.push(item);
+    }
   }
+  return result;
 }
 
-console.log('fizzBuzz', fizzBuzz(25));
+console.log('unique', unique([2, 6, 6, 9, 4, 6, 8, 10, 9]));
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { fizzBuzz };
+  module.exports = { unique };
 }
 if (typeof window !== "undefined") {
-  window.fizzBuzz = fizzBuzz;
+  window.unique = unique;
 }
